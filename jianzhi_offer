@@ -1,0 +1,16 @@
+def LastRemaining_Solution(self, n, m):
+    # write code here
+    if not n or not m:
+        return -1
+    child=list(range(n))
+    start=0
+    L=len(child)
+    while L>1:
+        num=(start+m-1)%L
+        child.pop(num)
+        L=len(child)
+        start=num%L
+    return child[0]
+
+ if __name__=='__main__':
+    print (LastRemaining_Solution(15,20))
